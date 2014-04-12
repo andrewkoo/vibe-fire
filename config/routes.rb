@@ -2,6 +2,7 @@ VibeWire::Application.routes.draw do
 
 root 'basic_pages#home'
 match '/help', to: 'basic_pages#help', via: 'get'
+match '/fire', to: 'basic_pages#fire', via: 'get'
 match '/about', to: 'basic_pages#about', via: 'get'
 match '/contact', to: 'basic_pages#contact', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.

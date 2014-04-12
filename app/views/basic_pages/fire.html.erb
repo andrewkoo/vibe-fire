@@ -1,0 +1,53 @@
+<div class='center hero-unit'>
+    <img id="img" src=<%= asset_path("cookies.jpeg") %>
+    alt="Cover Art Not Found" width="500" height="500" class="img-thumbnail">
+</div>
+
+<script>
+    var songCount = 0;
+    time = 0;
+    
+    $(document).ready(function() {
+        var interval = setInterval(timerIncrement, 1000);
+    });
+
+    function timerIncrement() {
+        time = time + 1;
+        if (time > 29) {
+            // Go to next song
+        }
+    }
+
+    var startTime = new Date().getTime();
+
+    function end() {
+        if (songCount < 10) {
+            return;
+        } else {
+            // Go to result page
+        }
+    }
+
+    document.onkeydown = function() {
+        switch (window.event.keyCode) {
+        case 37: // left
+            alert('left');
+            songCount += 1;
+            break;
+        case 38: // up
+            alert('up');
+            break;
+        case 39: // right
+            // do something
+            break;
+        case 40: // down
+            end();
+            break;
+        }
+    }
+
+    function flip() {
+        document.images.img.src = foo() // Insert Sam's function here;
+    }
+
+</script>
