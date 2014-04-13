@@ -1,5 +1,9 @@
 <div id='container'>
-  <div id="hero"><div id='hero-blue'>Vibe</div><div id='hero-red'>Fire</div></div>
+  <div id="hero"><%= link_to image_tag("vibefire.png", alt: "", height: "50", width: '150'), root_path, id: "logoimage" %>
+</div>
+  <div id='head'>
+      <h4><a href='/about' id='about'>About Us</a></h4>
+  </div>
   <div id="background"></div>
 
   <div id='title-content'>
@@ -19,6 +23,9 @@
         <input type='image' type='submit' src='assets/Magnifying_glass_icon.svg' id='submit-button' height='20px'>
       </form>
     </div>
+
+    <div id='help'>
+        <h5><a href='/help'>What's this?</a></h5>
   </div>
 
 

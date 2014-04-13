@@ -50,7 +50,7 @@ width: 100%;
 }
 
 #container{
-    position: relative; 
+    position: relative;
 }
 
 #background {
@@ -79,7 +79,7 @@ width: 100%;
 
 #title-content-info
 {
-  text-align: center; 
+  text-align: center;
   margin-bottom: 20px;
   font-size: 13px;
 }
@@ -103,7 +103,7 @@ width: 100%;
 #form
 {
   display:none;
-  position:absolute; 
+  position:absolute;
   width: 50%;
   left: 50%;
   margin-left: -323px;

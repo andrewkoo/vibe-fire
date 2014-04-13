@@ -5,11 +5,7 @@ $grayMediumLight: #eaeaea;
 /* universal */
 
 #page {
-    background: url('assets/background.jpg');
-    background-size: 100% 100%;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    background: black;
 }
 
 html {
@@ -22,8 +18,9 @@ html {
 }
 
 body {
+    margin: 0px;
 	padding-top: 60px;
-	background-color: transparent;
+	background-color: black;
 }
 
 .hero-unit {
@@ -35,7 +32,7 @@ body {
 	color: black;
 	display: block;
 	margin: auto;
-	background: transparent;
+    background: transparent;
 }
 
 #button {
@@ -192,23 +189,4 @@ footer {
 			margin-left: 10px;
 		}
 	}
-}
-
-/* forms */
-
-input, textarea, select, .uneditable-input {
-	margin-left: auto;
-	margin-right: auto;
-    border: 1px solid #bbb;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.span6 {
-	margin-left: 200px;
-	margin-right: auto;
-}
-
-input {
-    height: auto !important;
 }
