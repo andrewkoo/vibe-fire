@@ -34,8 +34,12 @@ body {
 }
 
 .hero-unit {
-	color: black;
-	background: $grayDark;
+    background-color: transparent;
+}
+
+#help-text {
+    background-color: rgba(255, 255, 255, 0.12);
+    font-size: 16px;
 }
 
 .container {
@@ -74,6 +78,7 @@ textarea {
 .center {
 	text-align: center;
 	color: white;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	h1 {
 		margin-bottom: 10px;
 	}
@@ -92,11 +97,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 3em;
 	letter-spacing: 0px;
 	margin-bottom: 15px;
 	margin-top: 15px;
 	text-align: center;
+    font-size: 50px;
+    font-weight: 100;
 }
 
 h2 {
@@ -169,15 +175,24 @@ header {
 #logoimage {
 	padding-top: 9px;
 	float: left;
+    background-color: transparent;
 }
 
 /* footer */
 
+pre {
+    background-color: rgba(255, 255, 255, 0.12);
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+
 footer {
     margin-top: 45px;
 	border-radius: 15px;
-    padding-top: 5px;
-    border-top: 1px solid #eaeaea;
+    /*padding-top: 5px;*/
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
 	background-color: black;
     color: $white;
     color: $grayLight;
@@ -199,4 +214,14 @@ footer {
 			margin-left: 10px;
 		}
 	}
+}
+
+#header-background {
+    background-color: rgba(255,255,255,.12);
+}
+
+#home-text {
+    color: white;
+    font-size: 12;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

@@ -3,7 +3,7 @@
     alt="Cover Art Not Found" width="250" height="250" class="img-thumbnail">
 </div>
 
-<style>
+<style class>
     #timer {
         font-size: 3em;
         letter-spacing: -1px;
@@ -22,7 +22,7 @@
         text-align: left;
         font-weight: bold;
         margin-top: -50px;
-        color: black;
+        color: white;
         position: relative;
     }
 
@@ -32,7 +32,7 @@
         margin-bottom: 30px;
         text-align: center;
         font-weight: bold;
-        color: black;
+        color: white;
         position: relative;
     }
 </style>
@@ -45,9 +45,7 @@
 </div>
 
 <script>
-    var ck = document.cookie;
-    alert(ck);
-
+    var seed = sessvars.myObj.split(";");
     var songCount = 0;
     time = 0;
     document.getElementById('songCounter').innerHTML = "Songs:" + songCount;
@@ -86,8 +84,17 @@
         document.getElementById('songCounter').innerHTML = "Songs: " + songCount;
         time = 0;
         document.getElementById('timer').innerHTML = 'Next!';
-        //next song
-        document.images.img.src = foo() // Insert Sam's function here;
+        $("img").flip({
+            direction:'tb',
+            onAnimation: function() {
+                nextSong();
+            }
+        });
+    }
+
+    function nextSong() {
+        var img = '<%= asset_path('cookies.jpeg') %>';
+        document.getElementById('img').src = img;
     }
 
     document.onkeydown = function() {

@@ -1,7 +1,7 @@
 body {	/*the outer layer of the site and global style attributes*/
 font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 margin: 0px;
-background: white;
+background: transparent;
 }
 
 /* Utility Stylesheets */

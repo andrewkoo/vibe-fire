@@ -12,20 +12,23 @@
       Choose a song, genre, or artist.
     </div>
     <script>
+
     function song() {
-        document.cookie = "category=song;";
+        return "song";
     }
     function genre() {
-        document.cookie = "category=genre;";
+        return "genre";
     }
     function artist() {
-        document.cookie = "category=artist;";
+        return "artist";
     }
+    var funct;
+
     </script>
     <div id='title-buttons'>
-      <div id="song-button" class='button' onClick="song()">Song</div>
-      <div id='genre-button' class='button' onClick="genre()">Genre</div>
-      <div id='artist-button' class='button' onClick="artist()">Artist</div>
+      <div id="song-button" class='button' onClick="funct = song()">Song</div>
+      <div id='genre-button' class='button' onClick="funct = genre()">Genre</div>
+      <div id='artist-button' class='button' onClick="funct = artist()">Artist</div>
     </div>
 
     <div id='form'>
@@ -38,7 +41,7 @@
         <script>
         function getstr() {
             var str = document.getElementById('text-box').value;
-            document.cookie = document.cookie + "input=" + str;
+            sessvars.myObj = funct + "; " + str;
             window.location = '/fire';
         }
         </script>
