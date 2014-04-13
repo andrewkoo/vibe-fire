@@ -1,7 +1,41 @@
 <div class='center hero-unit'>
-    <img id="img" src=<%= asset_path("cookies.jpeg") %>
-    alt="Cover Art Not Found" width="500" height="500" class="img-thumbnail">
+    <img id="img" src=<%= asset_path("kevinxie.jpeg") %>
+    alt="Cover Art Not Found" width="250" height="250" class="img-thumbnail">
 </div>
+
+<style>
+    #timer {
+        font-size: 3em;
+        letter-spacing: -1px;
+        margin-bottom: 30px;
+        margin-top: 0px;
+        text-align: right;
+        font-weight: bold;
+        color: red;
+        position: relative;
+    }
+
+    #songCounter {
+        font-size: 3em;
+        letter-spacing: -1px;
+        margin-bottom: 30px;
+        text-align: left;
+        font-weight: bold;
+        margin-top: -50px;
+        color: black;
+        position: relative;
+    }
+
+    #error {
+        font-size: 3em;
+        letter-spacing: -1px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        position: relative;
+    }
+</style>
 
 <div id='timer'>
 </div>
@@ -13,14 +47,15 @@
 <script>
     var songCount = 0;
     time = 0;
-    document.getElementById('songCounter').innerHTML = songCount;
+    document.getElementById('songCounter').innerHTML = "Songs:" + songCount;
+    document.getElementById('timer').innerHTML = "Time Left: " + (30 - time);
 
     $(document).ready(function() {
         var interval = setInterval(timerIncrement, 1000);
     });
 
     function timerIncrement() {
-        document.getElementById('timer').innerHTML = 30 - time;
+        document.getElementById('timer').innerHTML = "Time Left: " + (30 - time);
         if (time >= 30) {
             next();
         }
@@ -45,8 +80,7 @@
 
     function next() {
         document.getElementById('error').innerHTML = '';
-        songCount += 1;
-        document.getElementById('songCounter').innerHTML = songCount;
+        document.getElementById('songCounter').innerHTML = "Songs: " + songCount;
         time = 0;
         document.getElementById('timer').innerHTML = 'Next!';
         //next song
@@ -56,14 +90,14 @@
     document.onkeydown = function() {
         switch (window.event.keyCode) {
         case 37: // left
+            songCount += 1;
             next();
             break;
         case 38: // up
-            time = 0;
-            document.getElementById('timer').innerHTML = 'Next!';
-            //next song
+            next();
             break;
         case 39: // right
+            songCount += 1;
             next();
             break;
         case 40: // down
