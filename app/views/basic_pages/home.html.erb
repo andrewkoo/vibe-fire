@@ -11,16 +11,37 @@
     <div id='title-content-info'>
       Choose a song, genre, or artist.
     </div>
+    <script>
+    function song() {
+        document.cookie = "category=song;";
+    }
+    function genre() {
+        document.cookie = "category=genre;";
+    }
+    function artist() {
+        document.cookie = "category=artist;";
+    }
+    </script>
     <div id='title-buttons'>
-      <div id="song-button" class='button'>Song</div>
-      <div id='genre-button' class='button'>Genre</div>
-      <div id='artist-button' class='button'>Artist</div>
+      <div id="song-button" class='button' onClick="song()">Song</div>
+      <div id='genre-button' class='button' onClick="genre()">Genre</div>
+      <div id='artist-button' class='button' onClick="artist()">Artist</div>
     </div>
 
     <div id='form'>
-      <form>
+      <form action="">
         <input id='text-box' type='text' name='textfield'>
-        <input type='image' type='submit' src='assets/Magnifying_glass_icon.svg' id='submit-button' height='20px'>
+        <a href="#" id="bottle" onclick="getstr()">
+            <img src='assets/Magnifying_glass_icon.svg' alt='submit'
+            id='submit-button' height='20px'>
+        </a>
+        <script>
+        function getstr() {
+            var str = document.getElementById('text-box').value;
+            document.cookie = document.cookie + "input=" + str;
+            window.location = '/fire';
+        }
+        </script>
       </form>
     </div>
 
