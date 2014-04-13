@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="jquery-1.11.0.js"></script>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", media: "all",
+    <script src="jquery-1.11.0.js"></script>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", media: "all",
                                             "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
 </head>
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
+    <body>
+    <%= render 'layouts/header' %>
         <div class="container">
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home",    '/' %></li>
-              <li><%= link_to "Help",    '/help' %></li>
-              <li><%= link_to "Contact", '/contact' %></li>
-            </ul>
-          </nav>
+            <%= yield %>
+            <%= render 'layouts/footer' %>
         </div>
-      </div>
-    </header>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+    </body>
 </html>

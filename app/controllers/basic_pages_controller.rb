@@ -1,6 +1,7 @@
 class BasicPagesController < ApplicationController
 
     def home
+        render layout: 'homelayout'
     end
 
     def help

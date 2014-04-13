@@ -3,42 +3,66 @@
     alt="Cover Art Not Found" width="500" height="500" class="img-thumbnail">
 </div>
 
+<div id='timer'>
+</div>
+<div id='songCounter'>
+</div>
+<div id='error'>
+</div>
+
 <script>
     var songCount = 0;
     time = 0;
-    
+    document.getElementById('songCounter').innerHTML = songCount;
+
     $(document).ready(function() {
         var interval = setInterval(timerIncrement, 1000);
     });
 
     function timerIncrement() {
-        time = time + 1;
-        if (time > 29) {
-            // Go to next song
+        document.getElementById('timer').innerHTML = 30 - time;
+        if (time >= 30) {
+            next();
         }
+        time = time + 1;
     }
 
     var startTime = new Date().getTime();
 
     function end() {
         if (songCount < 10) {
-            return;
+            if (songCount == 9) {
+                document.getElementById('error').innerHTML =
+                'You have 1 song to go.';
+            } else {
+                document.getElementById('error').innerHTML =
+                'You have ' + (10 - songCount) + ' songs to go.';
+            }
         } else {
             // Go to result page
         }
     }
 
+    function next() {
+        document.getElementById('error').innerHTML = '';
+        songCount += 1;
+        document.getElementById('songCounter').innerHTML = songCount;
+        time = 0;
+        document.getElementById('timer').innerHTML = 'Next!';
+        //next song
+        document.images.img.src = foo() // Insert Sam's function here;
+    }
+
     document.onkeydown = function() {
         switch (window.event.keyCode) {
         case 37: // left
-            alert('left');
-            songCount += 1;
+            next();
             break;
         case 38: // up
-            alert('up');
+            next();
             break;
         case 39: // right
-            // do something
+            next();
             break;
         case 40: // down
             end();
@@ -46,8 +70,5 @@
         }
     }
 
-    function flip() {
-        document.images.img.src = foo() // Insert Sam's function here;
-    }
 
 </script>
